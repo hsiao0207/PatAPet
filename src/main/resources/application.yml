@@ -1,0 +1,48 @@
+server:
+  port: 8080 # 後端 API 服務監聽通訊埠
+
+spring:
+  application:
+    name: patapet-backend
+
+  # ---------------------------------------------------------------------------
+  # 1. PostgreSQL 資料庫與 HikariCP 連線池配置
+  # ---------------------------------------------------------------------------
+  datasource:
+    # 連線至 Docker 容器中的 PostgreSQL 5432 Port
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/patapet_db}
+    username: ${SPRING_DATASOURCE_USERNAME:root}
+    password: ${SPRING_DATASOURCE_PASSWORD:secretpassword}
+    driver-class-name: org.postgresql.Driver
+    
+    # HikariCP 連線池高併發效能調優
+    hikari:
+      maximum-pool-size: 10      # 連線池最大連線數
+      minimum-idle: 5            # 保持最小空閒連線數
+      idle-timeout: 300000       # 空閒連線釋放時間 (5 分鐘)
+      connection-timeout: 20000  # 取得連線逾時上限 (20 秒)
+
+  # ---------------------------------------------------------------------------
+  # 2. JPA / Hibernate 行為設定
+  # ---------------------------------------------------------------------------
+  jpa:
+    hibernate:
+      # 啟動時核對 Java Entity 欄位與 Docker init.sql 建立的 Table 是否 100% 吻合
+      ddl-auto: validate
+    open-in-view: false            # 關閉 OSIV，避免 Controller 層偷跑 lazy query
+    show-sql: true                 # 在控制台印出執行的 SQL 語法 (方便 Debug)
+    properties:
+      hibernate:
+        format_sql: true           # 美化排版控制台輸出的 SQL
+
+# ---------------------------------------------------------------------------
+# 3. PatAPet 自訂業務模組參數 (JWT & Stripe)
+# ---------------------------------------------------------------------------
+jwt:
+  # JWT 簽發密鑰 (HS256 演算法要求至少 256 bits / 32 字元)
+  secret: ${JWT_SECRET:your-super-secret-key-that-must-be-at-least-256-bits-long-for-hs256-security}
+  expiration-ms: 604800000       # 7 天 (7 * 24 * 60 * 60 * 1000 ms)
+
+stripe:
+  secret-key: ${STRIPE_SECRET_KEY:sk_test_placeholder}
+  webhook-secret: ${STRIPE_WEBHOOK_SECRET:whsec_placeholder}
