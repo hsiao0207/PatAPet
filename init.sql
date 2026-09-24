@@ -46,6 +46,7 @@ CREATE TABLE users (
     password_hash VARCHAR(255) NOT NULL,
     full_name VARCHAR(100) NOT NULL,
     role user_role NOT NULL DEFAULT 'PATTER',
+    stripe_customer_id VARCHAR(255), -- Stripe 顧客 ID (付款用)
     created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP
 );

@@ -46,6 +46,10 @@ public class User extends BaseEntity {
     @Builder.Default
     private Role role = Role.PATTER;
 
+    // Stripe 顧客 ID (Patter 付款綁定信用卡用)
+    @Column(name = "stripe_customer_id", length = 255)
+    private String stripeCustomerId;
+
     // ---------------------------------------------------------------------------
     // JPA 關聯對映 (Entity Relationships)
     // ---------------------------------------------------------------------------
