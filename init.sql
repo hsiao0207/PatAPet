@@ -55,7 +55,7 @@ CREATE TABLE owner_profiles (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     user_id UUID UNIQUE NOT NULL REFERENCES users(id) ON DELETE CASCADE,
     phone VARCHAR(20) NOT NULL,
-    bank_account_info JSONB NOT NULL, -- { "bank_code": "013", "account_number": "12345678", "account_name": "Eric Hsiao" }
+    stripe_account_id VARCHAR(255), -- Stripe Connect 帳號 ID，不再存明文銀行帳號
     vaccine_c5_declared BOOLEAN NOT NULL DEFAULT FALSE,
     non_aggressive_declared BOOLEAN NOT NULL DEFAULT FALSE,
     status owner_status NOT NULL DEFAULT 'PENDING',

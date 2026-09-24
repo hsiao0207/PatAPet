@@ -39,10 +39,9 @@ public class OwnerProfile extends BaseEntity {
     @Column(name = "phone", nullable = false, length = 20)
     private String phone;
 
-    // 映射 PostgreSQL 的 JSONB 欄位：存放 BSB、Account Number 或 Stripe Custom Account ID
-    @JdbcTypeCode(SqlTypes.JSON)
-    @Column(name = "bank_account_info", nullable = false, columnDefinition = "jsonb")
-    private Map<String, Object> bankAccountInfo;
+    // Stripe Connect 帳號 ID (取代原本危險的明文銀行帳號)
+    @Column(name = "stripe_account_id", length = 255)
+    private String stripeAccountId;
 
     @Column(name = "vaccine_c5_declared", nullable = false)
     private Boolean vaccineC5Declared;
