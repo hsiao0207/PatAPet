@@ -1,3 +1,9 @@
+/**
+ * 檔案用途：實體的基礎類別 (MappedSuperclass)，提供自動化紀錄創建時間與更新時間的功能。
+ * 互動關係：
+ * - 繼承：被 User, Pet, Booking, Listing, OwnerProfile 等所有 Entity 繼承
+ * - 依賴：JpaAuditing (由 PatAPetApplication 的 @EnableJpaAuditing 驅動)
+ */
 package com.patapet.entity;
 
 import jakarta.persistence.Column;
@@ -9,20 +15,20 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 
 @Getter
 @Setter
-@MappedSuperclass // 聲明此類別為基類，不會單獨在 DB 建立 BaseEntity Table，但其欄位會繼承至子類別 Table
-@EntityListeners(AuditingEntityListener.class) // 監聽 Entity 生命週期事件，自動注入建立與修改時間
+@MappedSuperclass
+@EntityListeners(AuditingEntityListener.class)
 
 public abstract class BaseEntity {
 
     @CreatedDate
     @Column(name = "created_at", nullable = false, updatable = false)
-    private LocalDateTime createdAt;
+    private Instant createdAt;
 
     @LastModifiedDate
     @Column(name = "updated_at", nullable = false)
-    private LocalDateTime updatedAt;
+    private Instant updatedAt;
 }

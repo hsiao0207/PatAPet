@@ -1,7 +1,15 @@
+/**
+ * 檔案用途：使用者的實體類別 (Entity)，對應資料庫的 users 表格。
+ * 互動關係：
+ * - 關聯：與 OwnerProfile (一對一)、Pet (一對多)、Booking (一對多) 互動
+ * - 被操作：由 UserRepository 進行存取
+ */
 package com.patapet.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +41,8 @@ public class User extends BaseEntity {
     private String fullName;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "role", nullable = false, length = 20)
+    @JdbcTypeCode(SqlTypes.NAMED_ENUM)
+    @Column(name = "role", nullable = false, columnDefinition = "user_role")
     @Builder.Default
     private Role role = Role.PATTER;
 

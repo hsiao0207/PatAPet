@@ -1,7 +1,6 @@
 services:
   db:
     image: postgis/postgis:15-3.4
-    platform: linux/amd64
     container_name: patapet-db
     restart: always
     environment:
@@ -9,7 +8,7 @@ services:
       POSTGRES_PASSWORD: secretpassword
       POSTGRES_DB: patapet_db
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       # 1. 資料持久化（確保資料庫重新建立後資料不丟失）
       - postgres_data:/var/lib/postgresql/data

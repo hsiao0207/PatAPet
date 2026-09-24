@@ -1,3 +1,10 @@
+/**
+ * 檔案用途：JWT 攔截器，負責攔截每個 HTTP 請求，從 Authorization Header 取出 Token 並驗證，若有效則將使用者身分放入 SecurityContext。
+ * 互動關係：
+ * - 被註冊於：SecurityConfig
+ * - 依賴：JwtTokenProvider (用來解析與驗證 Token)
+ * - 影響範圍：所有需要權限的 Controller API
+ */
 package com.patapet.security;
 
 import jakarta.servlet.FilterChain;

@@ -1,3 +1,8 @@
+/**
+ * 檔案用途：預約紀錄的實體類別 (Entity)，對應資料庫的 bookings 表格。
+ * 互動關係：
+ * - 關聯：與 User(Renter) 為多對一、與 Listing 為多對一
+ */
 package com.patapet.entity;
 
 import jakarta.persistence.*;

@@ -1,3 +1,8 @@
+/**
+ * 檔案用途：飼主個人檔案的實體類別 (Entity)，對應資料庫的 owner_profiles 表格。
+ * 互動關係：
+ * - 關聯：與 User 實體為一對一 (OneToOne) 關聯
+ */
 package com.patapet.entity;
 
 import jakarta.persistence.*;

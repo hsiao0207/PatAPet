@@ -10,7 +10,7 @@ spring:
   # ---------------------------------------------------------------------------
   datasource:
     # 連線至 Docker 容器中的 PostgreSQL 5432 Port
-    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/patapet_db}
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5433/patapet_db}
     username: ${SPRING_DATASOURCE_USERNAME:root}
     password: ${SPRING_DATASOURCE_PASSWORD:secretpassword}
     driver-class-name: org.postgresql.Driver

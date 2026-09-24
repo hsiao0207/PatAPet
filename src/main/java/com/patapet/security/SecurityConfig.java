@@ -1,3 +1,9 @@
+/**
+ * 檔案用途：Spring Security 的核心設定檔，負責設定 API 的存取規則、CORS、CSRF，以及將自訂的 JWT 攔截器加入過濾鍊。
+ * 互動關係：
+ * - 依賴：JwtFilter (加在 UsernamePasswordAuthenticationFilter 之前)
+ * - 保護目標：所有的 Controller API (除了 /api/auth/** 放行之外)
+ */
 package com.patapet.security;
 
 import lombok.RequiredArgsConstructor;
