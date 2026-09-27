@@ -37,6 +37,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         // 開放：登入 / 註冊 不需要 Token
                         .requestMatchers("/api/auth/**").permitAll()
+                        // 開放：Swagger UI 文件頁面
+                        .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
                         // 其他所有路徑都需要驗證
                         .anyRequest().authenticated())
                 // 4. 把 JwtFilter 插在 Spring 內建的帳密 Filter 之前
