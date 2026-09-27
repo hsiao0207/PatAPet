@@ -46,7 +46,8 @@ public class Pet extends BaseEntity {
     private BigDecimal weightKg;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "size_category", nullable = false, length = 20)
+    @JdbcTypeCode(SqlTypes.NAMED_ENUM)
+    @Column(name = "size_category", nullable = false, columnDefinition = "pet_size")
     private PetSize sizeCategory;
 
     @Column(name = "photo_url", nullable = false, length = 512)
