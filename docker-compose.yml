@@ -2,18 +2,47 @@ services:
   db:
     image: postgis/postgis:15-3.4
     container_name: patapet-db
-    restart: always
+    restart: unless-stopped
+
     environment:
-      POSTGRES_USER: root
-      POSTGRES_PASSWORD: secretpassword
-      POSTGRES_DB: patapet_db
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+
     ports:
       - "127.0.0.1:5433:5432"
+
     volumes:
       # 1. 資料持久化（確保資料庫重新建立後資料不丟失）
       - postgres_data:/var/lib/postgresql/data
       # 2. 掛載初始化 SQL 資料夾（自動按順序執行裡面的 .sql 檔案）
       - ./init.sql:/docker-entrypoint-initdb.d/01-init.sql
+
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}" ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: patapet-api
+    restart: unless-stopped
+
+    depends_on:
+      db:
+        condition: service_healthy
+
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/${POSTGRES_DB}
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET}
+
+    ports:
+      - "127.0.0.1:8080:8080"
 
 volumes:
   postgres_data:

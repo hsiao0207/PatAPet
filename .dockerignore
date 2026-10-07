@@ -1,0 +1,19 @@
+# Git
+.git
+.gitignore
+
+# Maven build folder
+target/
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+*.swp
+
+# OS files
+.DS_Store
+
+# Env files
+.env
+*.env
