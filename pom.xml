@@ -96,6 +96,16 @@
             <version>24.16.0</version>
         </dependency>
 
+        <!-- 10. Flyway 資料庫版本控制 -->
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-database-postgresql</artifactId>
+        </dependency>
+
         <!-- 9. Testing 測試模組：單元測試與整合測試 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
