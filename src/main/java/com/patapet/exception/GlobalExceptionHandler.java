@@ -1,8 +1,8 @@
 /**
- * 檔案用途：全域的例外處理器，攔截 Controller 層拋出的所有 Exception，並轉換為統一格式的 HTTP JSON 回應。
- * 互動關係：
- * - 攔截：所有 Controller 拋出的例外 (例如 IllegalArgumentException, MethodArgumentNotValidException)
- * - 影響：決定前端收到的 HTTP 狀態碼與錯誤訊息格式
+ * Purpose: Global exception handler. Intercepts all Exceptions thrown by the Controller layer and converts them into a unified HTTP JSON response format.
+ * Interactions:
+ * - Intercepts: All exceptions thrown by Controllers (e.g., IllegalArgumentException, MethodArgumentNotValidException)
+ * - Affects: Determines the HTTP status codes and error message formats received by the frontend
  */
 package com.patapet.exception;
 

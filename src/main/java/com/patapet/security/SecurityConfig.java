@@ -1,8 +1,8 @@
 /**
- * 檔案用途：Spring Security 的核心設定檔，負責設定 API 的存取規則、CORS、CSRF，以及將自訂的 JWT 攔截器加入過濾鍊。
- * 互動關係：
- * - 依賴：JwtFilter (加在 UsernamePasswordAuthenticationFilter 之前)
- * - 保護目標：所有的 Controller API (除了 /api/auth/** 放行之外)
+ * Purpose: Core configuration for Spring Security. Configures API access rules, CORS, CSRF, and adds the custom JWT interceptor to the filter chain.
+ * Interactions:
+ * - Dependencies: JwtFilter (added before UsernamePasswordAuthenticationFilter)
+ * - Protection Targets: All Controller APIs (with exceptions like /api/auth/** which are permitted for all)
  */
 package com.patapet.security;
 

@@ -1,7 +1,7 @@
 /**
- * 檔案用途：發布案件 (Listing) 的實體類別 (Entity)，對應資料庫的 listings 表格。
- * 互動關係：
- * - 關聯：與 User(Owner) 為多對一、與 Pet 為一對一/多對多(視業務邏輯)
+ * Purpose: Entity class representing a Listing. Maps to the listings table in the database.
+ * Interactions:
+ * - Relationships: Many-to-One with User (Owner), One-to-One/Many-to-Many with Pet (depending on business logic)
  */
 package com.patapet.entity;
 

@@ -1,8 +1,8 @@
 /**
- * 檔案用途：登入請求的資料傳輸物件 (DTO)，負責接收前端傳來的登入憑證 (email, 密碼)。
- * 互動關係：
- * - 接收自：AuthController (作為 @RequestBody 參數)
- * - 傳遞給：AuthService (用於比對資料庫的使用者憑證)
+ * Purpose: Data Transfer Object (DTO) for login requests. Receives login credentials (email, password) from the frontend.
+ * Interactions:
+ * - Received from: AuthController (as an @RequestBody parameter)
+ * - Passed to: AuthService (to verify user credentials against the database)
  */
 package com.patapet.dto;
 

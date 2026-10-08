@@ -1,8 +1,8 @@
 /**
- * 檔案用途：認證與授權的 Controller，負責暴露 /api/auth 下的 RESTful API 端點。
- * 互動關係：
- * - 接收自：前端發送的 HTTP 請求 (RegisterRequest, LoginRequest)
- * - 依賴：AuthService (處理註冊、登入邏輯並核發 JWT)
+ * Purpose: Controller for authentication and authorization. Exposes RESTful API endpoints under /api/auth.
+ * Interactions:
+ * - Receives from: HTTP requests sent by the frontend (RegisterRequest, LoginRequest)
+ * - Dependencies: AuthService (handles registration, login logic, and JWT issuance)
  */
 package com.patapet.controller;
 

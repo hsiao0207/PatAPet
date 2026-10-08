@@ -1,8 +1,8 @@
 /**
- * 檔案用途：負責處理認證相關的核心業務邏輯，包括密碼雜湊、帳號註冊、驗證登入憑證與核發 JWT。
- * 互動關係：
- * - 被呼叫：AuthController
- * - 依賴：UserRepository (查詢與儲存使用者)、JwtTokenProvider (產生 Token)、PasswordEncoder (密碼比對與加密)
+ * Purpose: Responsible for core business logic related to authentication, including password hashing, account registration, credential verification, and JWT issuance.
+ * Interactions:
+ * - Called by: AuthController
+ * - Dependencies: UserRepository (query and save users), JwtTokenProvider (generate Tokens), PasswordEncoder (password encryption and matching)
  */
 package com.patapet.service;
 

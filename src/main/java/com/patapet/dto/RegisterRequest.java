@@ -1,9 +1,9 @@
 /**
- * 檔案用途：註冊請求的資料傳輸物件 (DTO)，負責接收並驗證前端傳來的註冊資料 (email, 密碼, 姓名)。
- * 互動關係：
- * - 接收自：AuthController (作為 @RequestBody 參數)
- * - 傳遞給：AuthService (用於建立新 User 實體)
- * - 驗證攔截：GlobalExceptionHandler (若 @NotBlank 等驗證失敗，會拋出錯誤)
+ * Purpose: Data Transfer Object (DTO) for registration requests. Receives and validates registration data (email, password, full name) from the frontend.
+ * Interactions:
+ * - Received from: AuthController (as an @RequestBody parameter)
+ * - Passed to: AuthService (to create a new User entity)
+ * - Validation Intercept: GlobalExceptionHandler (throws errors if @NotBlank or other validations fail)
  */
 package com.patapet.dto;
 
