@@ -17,3 +17,6 @@ target/
 # Env files
 .env
 *.env
+
+# Frontend is deployed separately through AWS Amplify
+frontend/
