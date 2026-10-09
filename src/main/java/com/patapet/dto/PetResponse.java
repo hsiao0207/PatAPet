@@ -1,8 +1,8 @@
 /**
- * 檔案用途：包裝後端處理完成的寵物資料，回傳給前端 (Data Transfer Object)。
- * 互動關係：
- * - 來源：由 PetService 將資料庫的 Pet Entity 轉換而來。
- * - 去向：透過 PetController 轉換成 JSON 格式回傳給客戶端。
+ * Purpose: Data Transfer Object (DTO) wrapping the processed pet data to be returned to the frontend.
+ * Interactions:
+ * - Source: Converted from Pet Entity fetched from the database by PetService.
+ * - Destination: Returned to the client in JSON format via PetController.
  */
 package com.patapet.dto;
 

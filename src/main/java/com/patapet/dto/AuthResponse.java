@@ -1,8 +1,8 @@
 /**
- * 檔案用途：認證回應的資料傳輸物件 (DTO)，負責封裝登入或註冊成功後要回傳給前端的資料 (JWT Token, User ID, 角色)。
- * 互動關係：
- * - 產生於：AuthService
- * - 回傳至：AuthController (再轉為 JSON 回傳給前端)
+ * Purpose: Data Transfer Object (DTO) for authentication responses. Encapsulates data (JWT Token, User ID, role) returned to the frontend upon successful login or registration.
+ * Interactions:
+ * - Produced by: AuthService
+ * - Returned to: AuthController (which then converts it to JSON to return to the frontend)
  */
 package com.patapet.dto;
 

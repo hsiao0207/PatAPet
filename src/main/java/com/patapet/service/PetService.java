@@ -1,9 +1,9 @@
 /**
- * 檔案用途：寵物模組的商業邏輯層 (Service)，也就是這個模組的「大腦」。
- * 互動關係：
- * - 接收：由 PetController 傳入整理好的參數與身分資訊。
- * - 操作：呼叫 PetRepository 與 UserRepository 進行資料庫操作。
- * - 負責：負責所有關於寵物的安全檢查 (權限)、邏輯運算 (算體型)，並轉換 Entity 與 DTO。
+ * Purpose: Business logic layer (Service) for the Pet module; the "brain" of this module.
+ * Interactions:
+ * - Receives: Processed parameters and identity information from PetController.
+ * - Operates: Calls PetRepository and UserRepository for database operations.
+ * - Responsibilities: Handles all pet-related security checks (permissions), logical calculations (calculating size category), and converts between Entities and DTOs.
  */
 package com.patapet.service;
 

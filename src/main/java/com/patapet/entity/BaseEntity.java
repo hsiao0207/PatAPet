@@ -1,8 +1,8 @@
 /**
- * 檔案用途：實體的基礎類別 (MappedSuperclass)，提供自動化紀錄創建時間與更新時間的功能。
- * 互動關係：
- * - 繼承：被 User, Pet, Booking, Listing, OwnerProfile 等所有 Entity 繼承
- * - 依賴：JpaAuditing (由 PatAPetApplication 的 @EnableJpaAuditing 驅動)
+ * Purpose: Base class for entities (MappedSuperclass). Provides automatic tracking of creation and update timestamps.
+ * Interactions:
+ * - Inherited by: All Entities such as User, Pet, Booking, Listing, OwnerProfile
+ * - Dependencies: JpaAuditing (driven by @EnableJpaAuditing in PatAPetApplication)
  */
 package com.patapet.entity;
 

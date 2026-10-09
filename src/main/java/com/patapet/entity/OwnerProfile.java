@@ -1,17 +1,14 @@
 /**
- * 檔案用途：飼主個人檔案的實體類別 (Entity)，對應資料庫的 owner_profiles 表格。
- * 互動關係：
- * - 關聯：與 User 實體為一對一 (OneToOne) 關聯
+ * Purpose: Entity class representing an Owner's profile. Maps to the owner_profiles table in the database.
+ * Interactions:
+ * - Relationships: One-to-One with the User entity
  */
 package com.patapet.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.JdbcTypeCode;
-import org.hibernate.type.SqlTypes;
 
 import java.time.LocalDateTime;
-import java.util.Map;
 import java.util.UUID;
 
 @Entity

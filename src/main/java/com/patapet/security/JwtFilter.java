@@ -1,9 +1,9 @@
 /**
- * 檔案用途：JWT 攔截器，負責攔截每個 HTTP 請求，從 Authorization Header 取出 Token 並驗證，若有效則將使用者身分放入 SecurityContext。
- * 互動關係：
- * - 被註冊於：SecurityConfig
- * - 依賴：JwtTokenProvider (用來解析與驗證 Token)
- * - 影響範圍：所有需要權限的 Controller API
+ * Purpose: JWT interceptor. Intercepts each HTTP request, extracts the Token from the Authorization Header, verifies it, and populates the SecurityContext if valid.
+ * Interactions:
+ * - Registered in: SecurityConfig
+ * - Dependencies: JwtTokenProvider (used to parse and validate Tokens)
+ * - Scope: All Controller APIs that require authorization
  */
 package com.patapet.security;
 

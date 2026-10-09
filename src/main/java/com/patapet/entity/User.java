@@ -1,8 +1,8 @@
 /**
- * 檔案用途：使用者的實體類別 (Entity)，對應資料庫的 users 表格。
- * 互動關係：
- * - 關聯：與 OwnerProfile (一對一)、Pet (一對多)、Booking (一對多) 互動
- * - 被操作：由 UserRepository 進行存取
+ * Purpose: Entity class representing a User. Maps to the users table in the database.
+ * Interactions:
+ * - Relationships: Interacts with OwnerProfile (One-to-One), Pet (One-to-Many), Booking (One-to-Many)
+ * - Operated by: Accessed and manipulated via UserRepository
  */
 package com.patapet.entity;
 

@@ -1,8 +1,8 @@
 /**
- * 檔案用途：User 實體的資料存取層 (Data Access Object)，提供對 PostgreSQL 中 users 表格的 CRUD 操作。
- * 互動關係：
- * - 被呼叫：AuthService (用於尋找使用者、檢查 email 是否存在、儲存新使用者)
- * - 操作對象：User (實體類別)
+ * Purpose: Data Access Object (Repository) for User entities. Provides CRUD operations on the users table in PostgreSQL.
+ * Interactions:
+ * - Called by: AuthService (to find users, check if an email exists, and save new users)
+ * - Operates on: User (Entity class)
  */
 package com.patapet.repository;
 

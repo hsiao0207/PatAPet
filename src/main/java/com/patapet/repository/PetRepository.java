@@ -1,8 +1,8 @@
 /**
- * 檔案用途：寵物模組的資料庫存取層 (Repository)。
- * 互動關係：
- * - 被操作：由 PetService 呼叫，用來對 pets 表格進行 CRUD (新增、修改、刪除、查詢)。
- * - 黑魔法：透過繼承 JpaRepository 自動產生 SQL 語法，例如 findByOwnerId。
+ * Purpose: Data Access layer (Repository) for the Pet module.
+ * Interactions:
+ * - Operated by: Called by PetService to perform CRUD operations on the pets table.
+ * - Magic: Automatically generates SQL queries (e.g., findByOwnerId) by extending JpaRepository.
  */
 package com.patapet.repository;
 

@@ -1,8 +1,8 @@
 /**
- * 檔案用途：JWT 處理工具類別，負責生成 (Generate)、解析 (Parse) 與驗證 (Validate) JSON Web Token。
- * 互動關係：
- * - 被呼叫 (生成)：AuthService (登入、註冊成功時簽發 Token)
- * - 被呼叫 (驗證與解析)：JwtFilter (攔截請求時驗證 Token 並取得 userId 與 role)
+ * Purpose: JWT utility class. Responsible for generating, parsing, and validating JSON Web Tokens.
+ * Interactions:
+ * - Called by (Generation): AuthService (issues Token upon successful login or registration)
+ * - Called by (Validation & Parsing): JwtFilter (intercepts requests, validates Token, and retrieves userId and role)
  */
 package com.patapet.security;
 

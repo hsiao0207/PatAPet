@@ -1,7 +1,7 @@
 /**
- * 檔案用途：寵物的實體類別 (Entity)，對應資料庫的 pets 表格。
- * 互動關係：
- * - 關聯：與 User(Owner) 為多對一關聯
+ * Purpose: Entity class representing a Pet. Maps to the pets table in the database.
+ * Interactions:
+ * - Relationships: Many-to-One with User (Owner)
  */
 package com.patapet.entity;
 

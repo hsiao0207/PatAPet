@@ -1,8 +1,8 @@
 /**
- * 檔案用途：接收前端建立或修改寵物時傳入的資料 (Data Transfer Object)。
- * 互動關係：
- * - 來源：由 PetController 接收並透過 @Valid 進行防呆驗證。
- * - 去向：傳遞給 PetService 作為商業邏輯處理的參數。
+ * Purpose: Data Transfer Object (DTO) for receiving pet creation or modification data from the frontend.
+ * Interactions:
+ * - Source: Received by PetController and validated using @Valid.
+ * - Destination: Passed to PetService as parameters for business logic processing.
  */
 package com.patapet.dto;
 

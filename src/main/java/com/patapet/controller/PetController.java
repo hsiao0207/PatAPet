@@ -1,9 +1,9 @@
 /**
- * 檔案用途：寵物模組的 HTTP API 進入點 (Controller)，負責「接客」。
- * 互動關係：
- * - 接收：攔截前端發送到 /api/pets 的請求，並使用 JwtFilter 留下的 Authentication 取得使用者身分。
- * - 委託：將請求內容轉交給 PetService 處理。
- * - 回傳：把 PetService 處理好的 PetResponse 轉換成 JSON，帶上 HTTP 狀態碼回傳給前端。
+ * Purpose: HTTP API entry point (Controller) for the Pet module.
+ * Interactions:
+ * - Receives: Intercepts requests to /api/pets and uses the Authentication object set by JwtFilter to get the user's identity.
+ * - Delegates: Passes request payloads to PetService for processing.
+ * - Returns: Converts the PetResponse returned by PetService into JSON and returns it to the frontend with an HTTP status code.
  */
 package com.patapet.controller;
 
