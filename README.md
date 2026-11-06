@@ -6,15 +6,7 @@ The project demonstrates REST API design, stateless JWT security, ownership-base
 
 ## Live Deployment
 
-| Service | URL |
-| --- | --- |
-| React application | [Open PatAPet](https://main.d3d9e059cppvz7.amplifyapp.com) |
-| Swagger UI | [Open API documentation](https://pa-670535c0c36247ea84e3a8f7759bf5a9.ecs.ap-southeast-2.on.aws/swagger-ui/index.html) |
-| Health check | [View API health](https://pa-670535c0c36247ea84e3a8f7759bf5a9.ecs.ap-southeast-2.on.aws/actuator/health) |
-
-The API root is protected and returns `403 Forbidden` by design. Use Swagger UI, the health endpoint, or the React application to access the deployed system.
-
-> The live environment may be paused outside demonstration periods to control AWS costs.
+> The live environment be paused to control AWS costs.
 
 ## Current Features
 
